@@ -220,7 +220,7 @@ p {
 
 /* section 4 */
 /* TOURS SECTION STYLING */
-
+/* Tours Section Responsive Styling */
 .tours {
     margin: 70px 0;
     padding: 20px;
@@ -228,7 +228,7 @@ p {
 
 .tours .row {
     display: flex;
-    flex-wrap: wra;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -236,59 +236,99 @@ p {
 .tours .col {
     flex: 1 1 45%;
     margin: 10px;
+    text-align: left;
+    /* Align text to left */
 }
 
 .tours h1 {
-    font-size: 9vmin;
+    font-size: 6vmin;
+    /* Adjust font size for responsiveness */
     color: #333;
     margin-bottom: 20px;
-    margin-left: 250px;
     text-transform: uppercase;
     font-style: italic;
-    word-break: keep-all;
-
 }
 
 .tours p {
     color: #666;
     font-size: 2.1vmin;
     margin-bottom: 30px;
-    margin-left: 250px;
+    line-height: 1.6;
+    /* Improve readability on small screens */
 }
 
 .tours .ctn {
-    padding: 20px 30px;
+    padding: 15px 25px;
     background-color: #d10654;
     border-radius: 30px;
     color: whitesmoke;
     text-decoration: none;
-    margin-left: 250px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.tours .ctn:hover {
+    background-color: #ff385c;
 }
 
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    margin-top: 20px;
 }
 
 .image-gallery img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     object-fit: cover;
-    align-items: center;
+    transition: transform 0.5s;
 }
 
-
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
 
 /* Responsive adjustments */
-
 @media only screen and (max-width: 768px) {
+    .tours .row {
+        flex-direction: column;
+    }
+
     .tours .col {
         flex: 1 1 100%;
+        margin: 20px 0;
+    }
+
+    .tours h1,
+    .tours p,
+    .tours .ctn {
+        margin-left: 0;
+        /* Center content on smaller screens */
+        text-align: center;
     }
 
     .image-gallery {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .tours h1 {
+        font-size: 8vmin;
+    }
+
+    .tours p {
+        font-size: 3vmin;
+    }
+
+    .tours .ctn {
+        padding: 10px 20px;
+    }
+
+    .image-gallery img {
+        border-radius: 5px;
     }
 }
 
